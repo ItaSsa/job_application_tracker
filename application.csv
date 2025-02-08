@@ -1,0 +1,4 @@
+application_date;job_position;company;application_status;consultance_name;application_type;language;link;country;city;level_position;interview_date;interview_status;interview_type;interview_stage;offer_value
+08-01-25;Senior Data Analyst;Rabobank;Rejected;Qgroup;via recrutier;English;;Netherlands;Utrecht;senior;16-01-25;rejected;First with hiring manager;rejected;62k
+05-02-25;Data Engineer Snowflake;TCS;CV sent;Silverlink Technologies;via recrutier;English;;Netherlands;Amsterdam;senior;;;;;0
+06-02-25;Senior BI Analyst;Unkowing;CV sent;OrangeQuarter;via recrutier;English;;Netherlands;Amsterdam;senior;06-02-25;approved;First with recrutier;;0

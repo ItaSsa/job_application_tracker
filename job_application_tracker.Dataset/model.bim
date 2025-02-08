@@ -1,0 +1,2047 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"fApplication\",\"job_position\",\"company\",\"location\",\"consultance_name\",\"language\",\"level_position\",\"fInterview\",\"interview_application_bridge\",\"dim_applicationStatus\",\"dim_applicationType\",\"dim_interviewStatus\",\"dim_interviewType\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      }
+    ],
+    "culture": "pt-BR",
+    "cultures": [
+      {
+        "name": "pt-BR",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "701cad5c-b103-455d-8613-4c5ddcf11704",
+        "fromColumn": "application_date",
+        "fromTable": "fApplication",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_6c1fea7b-08bd-4cd2-8cdd-47d5569c86ce"
+      },
+      {
+        "name": "d654e857-6c9e-48e4-a93e-e827e9452341",
+        "fromColumn": "interview_date",
+        "fromTable": "fApplication",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_33d1df50-79b1-48d8-9d3d-d5980eb37fb3"
+      },
+      {
+        "name": "a1f251c0-2b94-4f6a-a25a-b532341797c7",
+        "fromColumn": "interview_date",
+        "fromTable": "fInterview",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_a4a105e0-bfd8-4015-8435-6cde218fa5b6"
+      },
+      {
+        "name": "AutoDetected_ab1febed-7ea5-47f5-b54b-b9d985d02271",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "interview_status",
+        "fromTable": "fInterview",
+        "toColumn": "interview_status",
+        "toTable": "fApplication"
+      },
+      {
+        "name": "AutoDetected_bba682c7-10aa-41cd-805c-8fe2bcd7ff69",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "applicationId",
+        "fromTable": "interview_application_bridge",
+        "toColumn": "applicationId",
+        "toTable": "fApplication"
+      },
+      {
+        "name": "AutoDetected_71dae57f-2362-450b-b36d-27d805a297b9",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "consultanceName",
+        "fromTable": "consultance_name",
+        "toColumn": "consultance_name",
+        "toTable": "fApplication"
+      },
+      {
+        "name": "AutoDetected_f54b5109-2094-49da-839f-77b5f2f68b7f",
+        "fromColumn": "city",
+        "fromTable": "fApplication",
+        "toColumn": "city",
+        "toTable": "location"
+      },
+      {
+        "name": "AutoDetected_dff5d4d7-5e78-4be2-841c-546c1c65d354",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "interviewId",
+        "fromTable": "interview_application_bridge",
+        "isActive": false,
+        "toColumn": "interviewId",
+        "toTable": "fInterview"
+      },
+      {
+        "name": "AutoDetected_ec3b9e95-ba1c-4991-a726-1a9b0adce29e",
+        "fromColumn": "level_position",
+        "fromTable": "fApplication",
+        "toColumn": "levelPositionName",
+        "toTable": "level_position"
+      },
+      {
+        "name": "AutoDetected_e08aacbe-9c27-48f8-a007-74fd1313218a",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "companyName",
+        "fromTable": "company",
+        "toColumn": "company",
+        "toTable": "fApplication"
+      },
+      {
+        "name": "AutoDetected_4ef3a699-5136-48d3-8290-2df4f14f54a8",
+        "fromColumn": "language",
+        "fromTable": "fApplication",
+        "toColumn": "languageName",
+        "toTable": "language"
+      },
+      {
+        "name": "AutoDetected_5232a658-d782-4071-bafc-2acdc70fb5eb",
+        "fromColumn": "application_type",
+        "fromTable": "fApplication",
+        "toColumn": "applicationType",
+        "toTable": "dim_applicationType"
+      }
+    ],
+    "sourceQueryCulture": "nl-NL",
+    "tables": [
+      {
+        "name": "fApplication",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "application_date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "8d133501-6b97-485c-8b54-dca30413b023",
+            "sourceColumn": "application_date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Hierarquia de datas",
+                  "table": "LocalDateTable_6c1fea7b-08bd-4cd2-8cdd-47d5569c86ce"
+                },
+                "isDefault": true,
+                "relationship": "701cad5c-b103-455d-8613-4c5ddcf11704"
+              }
+            ]
+          },
+          {
+            "name": "link",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7debeaa9-3900-47e0-9fd0-258b835d808c",
+            "sourceColumn": "link",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "level_position",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "395afae6-5617-416a-aa5a-a3aef4a19a80",
+            "sourceColumn": "level_position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interview_date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "b48e7e83-db47-455e-a33c-8b3385a54ce1",
+            "sourceColumn": "interview_date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Hierarquia de datas",
+                  "table": "LocalDateTable_33d1df50-79b1-48d8-9d3d-d5980eb37fb3"
+                },
+                "isDefault": true,
+                "relationship": "d654e857-6c9e-48e4-a93e-e827e9452341"
+              }
+            ]
+          },
+          {
+            "name": "interview_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7514b0bd-4a9f-4eba-bcc5-392607ef5f2f",
+            "sourceColumn": "interview_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interview_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4f6a24cb-66c3-4e94-83d7-0fd97e349983",
+            "sourceColumn": "interview_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interview_stage",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "45954896-13e9-4e1d-b443-634fa0af7790",
+            "sourceColumn": "interview_stage",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "offer_value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f8af67b1-fac5-4596-b85a-b1c0944a9d6e",
+            "sourceColumn": "offer_value",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "applicationId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1d629150-ead1-4bea-8d1a-dc55bbf555d7",
+            "sourceColumn": "applicationId",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "job_position",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bdf462e8-41e8-4bd1-bee2-20ea53e2cd27",
+            "sourceColumn": "job_position",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "company",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "da83d3a7-d8aa-4ab7-8861-10e7897c6246",
+            "sourceColumn": "company",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "application_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7401db73-5807-475c-9ee9-039259d27fd1",
+            "sourceColumn": "application_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "consultance_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1788bd64-d30a-450d-b516-f4cfaccd5f97",
+            "sourceColumn": "consultance_name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "application_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "11b2ec03-a076-4b71-835a-3bfbb5ce24e8",
+            "sourceColumn": "application_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "language",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "de66f32a-76f2-4a7e-9f21-60c48103a62e",
+            "sourceColumn": "language",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "254767a2-e6e8-418b-aec1-a5318746c2c9",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "095fc2c5-833a-44bd-9770-c2a25f560fb2",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "32e41bcb-00d7-4960-b8bf-6570e9709a20",
+        "partitions": [
+          {
+            "name": "fApplication-cc37fb41-db1d-4939-9d53-4aaac24c935f",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"applicationId\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"applicationId\", \"application_date\", \"job_position\", \"company\", \"application_status\", \"consultance_name\", \"application_type\", \"language\", \"link\", \"country\", \"city\", \"level_position\", \"interview_date\", \"interview_status\", \"interview_type\", \"interview_stage\", \"offer_value\"})",
+                "in",
+                "    #\"Reordered Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_1620e9e2-b6f3-498c-86ad-ce3540f98e9d",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "5d898a26-de1e-452b-a656-f50064e8e8a9",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "ad56da3f-854e-4c9c-8f15-f2b8fcd4c27e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "7839d91f-df07-4afc-a2a5-3d39968e4e00",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "647245d9-f40c-434c-bdff-a1d7fb1d1ed2",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "5f51c95d-250c-4436-ad1d-3ffa4596e69d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Trimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Trim \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "6a30a2e9-a1a0-4d08-8407-b4fac74ccb86",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Dia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "eb9bf42d-04a8-43c1-901f-307ff0e2110b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarquia de datas",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Ano",
+                "column": "Ano",
+                "lineageTag": "f20ca5bf-dd6f-42c7-a251-9cbda0eaa4af",
+                "ordinal": 0
+              },
+              {
+                "name": "Trimestre",
+                "column": "Trimestre",
+                "lineageTag": "612e3d58-9988-4d73-a765-cf54980ecfb9",
+                "ordinal": 1
+              },
+              {
+                "name": "Mês",
+                "column": "Mês",
+                "lineageTag": "0c918f12-4cb1-48a1-a5b1-1fec337dfead",
+                "ordinal": 2
+              },
+              {
+                "name": "Dia",
+                "column": "Dia",
+                "lineageTag": "1fb12792-5c5e-4db6-91b9-6a024f81dcfc",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "5bc05bb1-fdd6-4a32-9428-0ae4fa2419ff"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "7d887f45-5fa1-466a-8741-0565760aa82a",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_1620e9e2-b6f3-498c-86ad-ce3540f98e9d-e8a7a514-2e12-4c79-afaf-b8172adbf8aa",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_6c1fea7b-08bd-4cd2-8cdd-47d5569c86ce",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "35ae63c0-99c2-4f32-beaa-a2f6a76b602e",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "075003a1-435e-4f88-883d-1ac74e58dd3b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "ad1a3d7b-fd15-4495-a349-d30a7357c17b",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "80d18139-8d15-4c84-97f4-5ae956f0f626",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "33ceb17d-9e05-46fe-83f3-5c3386469c52",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Trimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Trim \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "893572cb-04c4-4000-8a8e-31f09809d345",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Dia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "d0a2c2bd-63e8-463d-9101-3e3b942e5a24",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarquia de datas",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Ano",
+                "column": "Ano",
+                "lineageTag": "912a8b6e-4fc4-413d-b7c9-0c7704bd4950",
+                "ordinal": 0
+              },
+              {
+                "name": "Trimestre",
+                "column": "Trimestre",
+                "lineageTag": "f4c84b6c-69ad-4b00-bf3b-2590291b80dd",
+                "ordinal": 1
+              },
+              {
+                "name": "Mês",
+                "column": "Mês",
+                "lineageTag": "c692d64c-2a77-4b1c-8ada-a1e2c7bb897d",
+                "ordinal": 2
+              },
+              {
+                "name": "Dia",
+                "column": "Dia",
+                "lineageTag": "3ad6f123-32ca-44d8-b6f2-ed3390cd575d",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "23d67e4f-4690-4aaf-965a-f4ecd01120de"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "75306e39-e9e5-49ff-98e3-a26806ea1f77",
+        "partitions": [
+          {
+            "name": "LocalDateTable_6c1fea7b-08bd-4cd2-8cdd-47d5569c86ce-d8c4e871-61c0-4378-bc98-58161ed9ce90",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('fApplication'[application_date])), 1, 1), Date(Year(MAX('fApplication'[application_date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "LocalDateTable_33d1df50-79b1-48d8-9d3d-d5980eb37fb3",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "41749564-7be7-4017-94b0-2437287042a5",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "be162912-fac4-424e-bb3d-cbf49b0a175e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "7affda09-79a0-4ffa-ad72-0c530c7a08ab",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "5b3420f7-5999-431b-84ef-a64b61907438",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "f8c894ca-bd51-4a18-933f-cd63b0a4b7ee",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Trimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Trim \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "81d6f6cb-825c-4a48-be48-3823493eaa12",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Dia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "9b5ba3c9-1d09-496c-a3b8-73b4bf0b3535",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarquia de datas",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Ano",
+                "column": "Ano",
+                "lineageTag": "2cc080e2-22a1-4150-8893-7a9c75e929ad",
+                "ordinal": 0
+              },
+              {
+                "name": "Trimestre",
+                "column": "Trimestre",
+                "lineageTag": "b3a5fec5-1bc4-4bd5-9d85-f3ff454accea",
+                "ordinal": 1
+              },
+              {
+                "name": "Mês",
+                "column": "Mês",
+                "lineageTag": "174867e6-857f-40e5-a860-ec9f33b02a15",
+                "ordinal": 2
+              },
+              {
+                "name": "Dia",
+                "column": "Dia",
+                "lineageTag": "c3b6fa7d-182a-4afd-b43e-d29a836fa37b",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "cae70ff4-fb1c-4c25-b5fd-037a30493ac1"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "0eed590b-90d5-46e5-a312-bb778b33a9a1",
+        "partitions": [
+          {
+            "name": "LocalDateTable_33d1df50-79b1-48d8-9d3d-d5980eb37fb3-d0f8dbc4-320a-478d-8a1b-df73b5d42dcf",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('fApplication'[interview_date])), 1, 1), Date(Year(MAX('fApplication'[interview_date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "job_position",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "position_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d5ba93e6-ac4c-4a77-bf66-b62b4d7c8dd3",
+            "sourceColumn": "position_id",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "position_name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e01b1ba8-6db5-4a52-a294-f69a8aa1367b",
+            "sourceColumn": "position_name",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "034f650e-e69f-4c3f-bfb0-9afd5ea93d32",
+        "partitions": [
+          {
+            "name": "job_position-4aefd73f-b5d3-4765-b879-096c78557a1a",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    job_position1 = #\"Changed Type\"[job_position],",
+                "    #\"Converted to Table\" = Table.FromList(job_position1, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Converted to Table\",{{\"Column1\", \"position_name\"}}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Renamed Columns\"),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Duplicates\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Added Index\",{\"Index\", \"position_name\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Reordered Columns\",{{\"Index\", \"position_id\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "company",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "companyName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bf4ec59d-09da-4880-880d-8427a669f4e0",
+            "sourceColumn": "companyName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "companyIs",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a3071b51-4fc1-4519-847c-6675c5519a00",
+            "sourceColumn": "companyIs",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "f29123ba-a8f1-477b-8103-f78f4e4498ce",
+        "partitions": [
+          {
+            "name": "company",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type\", \"Index\", 1, 1, Int64.Type),",
+                "    company1 = #\"Added Index\"[company],",
+                "    #\"Converted to Table\" = Table.FromList(company1, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Converted to Table\",{{\"Column1\", \"companyName\"}}),",
+                "    #\"Added Index1\" = Table.AddIndexColumn(#\"Renamed Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Added Index1\",{{\"Index\", \"companyIs\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "location",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "locationId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f74c0e05-bd9c-4f3c-a32b-32a58d1eaf1b",
+            "sourceColumn": "locationId",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f2dc8e49-33f4-4e7d-a448-a819f7f6c43c",
+            "sourceColumn": "country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "city",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c4edcafb-e5c2-4d36-9cf3-fa8613113531",
+            "sourceColumn": "city",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fb2e4e7d-7238-4aaa-8f54-5663842115fc",
+        "partitions": [
+          {
+            "name": "location",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = fApplication,",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(Source,{\"country\", \"city\"}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Removed Other Columns\", {\"city\"}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Removed Duplicates\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"locationId\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"locationId\", \"country\", \"city\"})",
+                "in",
+                "    #\"Reordered Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "consultance_name",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "consultanceName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6344daff-4724-43a6-974f-02d647a3b599",
+            "sourceColumn": "consultanceName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "consultanceId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bfad5661-b29c-4d9a-a966-affea085ebe7",
+            "sourceColumn": "consultanceId",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "7bea38dd-e113-46be-8b84-d4dacc12f667",
+        "partitions": [
+          {
+            "name": "consultance_name",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type\", \"Index\", 1, 1, Int64.Type),",
+                "    consultance_name1 = #\"Added Index\"[consultance_name],",
+                "    #\"Converted to Table\" = Table.FromList(consultance_name1, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Converted to Table\",{{\"Column1\", \"consultanceName\"}}),",
+                "    #\"Added Index1\" = Table.AddIndexColumn(#\"Renamed Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Added Index1\",{{\"Index\", \"consultanceId\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "language",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "languageName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "225b1028-83d4-4742-84e3-c91cdad3e942",
+            "sourceColumn": "languageName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "languageId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d312dd73-c799-434e-8a1f-47221b1589cf",
+            "sourceColumn": "languageId",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "aa3d6d91-52c7-499e-8efa-2c00a1350bad",
+        "partitions": [
+          {
+            "name": "language",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type\", \"Index\", 1, 1, Int64.Type),",
+                "    language1 = #\"Added Index\"[language],",
+                "    #\"Removed Duplicates\" = List.Distinct(language1),",
+                "    #\"Converted to Table\" = Table.FromList(#\"Removed Duplicates\", Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Converted to Table\",{{\"Column1\", \"languageName\"}}),",
+                "    #\"Added Index1\" = Table.AddIndexColumn(#\"Renamed Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Added Index1\",{{\"Index\", \"languageId\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "level_position",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "levelPositionName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "138d953b-4087-438f-ac0b-0af59d76517c",
+            "sourceColumn": "levelPositionName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "levelPositionId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c08f3ab9-48e8-4b11-a370-374b2bfa9ff7",
+            "sourceColumn": "levelPositionId",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "581fbf57-e14a-44ff-b30f-10c61e7a1476",
+        "partitions": [
+          {
+            "name": "level_position",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\application.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"application_date\", type date}, {\"job_position\", type text}, {\"company\", type text}, {\"application_status\", type text}, {\"consultance_name\", type text}, {\"application_type\", type text}, {\"language\", type text}, {\"link\", type text}, {\"country\", type text}, {\"city\", type text}, {\"level_position\", type text}, {\"interview_date\", type date}, {\"interview_status\", type text}, {\"interview_type\", type text}, {\"interview_stage\", type text}, {\"offer_value\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type\", \"Index\", 1, 1, Int64.Type),",
+                "    level_position1 = #\"Added Index\"[level_position],",
+                "    #\"Removed Duplicates\" = List.Distinct(level_position1),",
+                "    #\"Converted to Table\" = Table.FromList(#\"Removed Duplicates\", Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Converted to Table\",{{\"Column1\", \"levelPositionName\"}}),",
+                "    #\"Added Index1\" = Table.AddIndexColumn(#\"Renamed Columns\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Added Index1\",{{\"Index\", \"levelPositionId\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fInterview",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "interviewId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7962db79-8bc3-49ef-aa58-3d14fa275bbe",
+            "sourceColumn": "interviewId",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "interview_date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "ff83cab1-fb0c-42d8-81e6-bf88ae5dc277",
+            "sourceColumn": "interview_date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Hierarquia de datas",
+                  "table": "LocalDateTable_a4a105e0-bfd8-4015-8435-6cde218fa5b6"
+                },
+                "isDefault": true,
+                "relationship": "a1f251c0-2b94-4f6a-a25a-b532341797c7"
+              }
+            ]
+          },
+          {
+            "name": "interview_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "78a8d34a-44b4-4176-9215-00d7d3fa41c9",
+            "sourceColumn": "interview_status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interview_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "38fabe35-9bbb-4054-8b93-123acb6a08c9",
+            "sourceColumn": "interview_type",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4cb48384-5be0-4550-ac3e-c91510642655",
+        "partitions": [
+          {
+            "name": "fInterview",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = fApplication,",
+                "    #\"Removed Columns\" = Table.RemoveColumns(Source,{\"application_date\", \"job_position\", \"company\", \"application_status\", \"consultance_name\", \"application_type\", \"language\", \"link\", \"country\", \"city\", \"level_position\", \"offer_value\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Columns\", each ([interview_date] <> null)),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Filtered Rows\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"interviewId\"}}),",
+                "    #\"Reordered Columns\" = Table.ReorderColumns(#\"Renamed Columns\",{\"interviewId\", \"applicationId\", \"interview_date\", \"interview_status\", \"interview_type\", \"interview_stage\"}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Reordered Columns\",{\"applicationId\", \"interview_stage\"})",
+                "in",
+                "    #\"Removed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_a4a105e0-bfd8-4015-8435-6cde218fa5b6",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "4f546b46-7a94-496b-9d00-6175d80ed864",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Ano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isHidden": true,
+            "lineageTag": "5d13bcc7-c649-4b64-bc31-2f0a15900761",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isHidden": true,
+            "lineageTag": "4f08de41-a7c0-4173-ad5d-9094e8f625eb",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Mês",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "630047e7-1b2a-4c9f-aead-fe79925ff68b",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isHidden": true,
+            "lineageTag": "c2d3f139-d056-4cbb-8630-7da15b43d245",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Trimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Trim \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "78cd9760-7124-4e81-922b-e0b832990d6a",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Dia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isHidden": true,
+            "lineageTag": "b4995ddc-a939-48fd-bdb0-499805dbb200",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarquia de datas",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Ano",
+                "column": "Ano",
+                "lineageTag": "80882144-e8c0-4ce1-b86e-49d99a395d6f",
+                "ordinal": 0
+              },
+              {
+                "name": "Trimestre",
+                "column": "Trimestre",
+                "lineageTag": "e6d4e841-97a7-4dd4-bddc-4d558ecb93bf",
+                "ordinal": 1
+              },
+              {
+                "name": "Mês",
+                "column": "Mês",
+                "lineageTag": "7f2947dc-c1b9-4117-9357-d85b919601a3",
+                "ordinal": 2
+              },
+              {
+                "name": "Dia",
+                "column": "Dia",
+                "lineageTag": "92b1be3f-06c9-44f1-bfec-166a95aa464c",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "6f2a9ccd-c5b5-468c-abcb-a54c9e675e9e"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "d8ae98ed-b084-485f-8d88-0003958a32bd",
+        "partitions": [
+          {
+            "name": "LocalDateTable_a4a105e0-bfd8-4015-8435-6cde218fa5b6",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('fInterview'[interview_date])), 1, 1), Date(Year(MAX('fInterview'[interview_date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "interview_application_bridge",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "applicationId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9d5a207c-0e7d-46ee-955a-04c7c3febba9",
+            "sourceColumn": "applicationId",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interviewId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "39ffc6a8-5b1d-439c-8935-03c0908d5e4d",
+            "sourceColumn": "interviewId",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "a921c863-1a24-481a-83bf-54abf5539cd1",
+        "partitions": [
+          {
+            "name": "interview_application_bridge",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = fApplication,",
+                "    #\"Removed Columns\" = Table.RemoveColumns(Source,{\"application_date\", \"job_position\", \"company\", \"application_status\", \"consultance_name\", \"application_type\", \"language\", \"link\", \"country\", \"city\", \"level_position\", \"offer_value\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Removed Columns\", each ([interview_date] <> null)),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Filtered Rows\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"interviewId\"}}),",
+                "    #\"Removed Columns1\" = Table.RemoveColumns(#\"Renamed Columns\",{\"interview_date\", \"interview_status\", \"interview_type\", \"interview_stage\"})",
+                "in",
+                "    #\"Removed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_applicationStatus",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "application_status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "64d1fd32-c114-414a-beb9-49a06e5c71f6",
+            "sourceColumn": "application_status",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "faf5da26-bc2b-4185-95cd-b1ca17d525cb",
+        "partitions": [
+          {
+            "name": "dim_applicationStatus",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\dim_applicationStatus.csv\"),[Delimiter=\";\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Promoted Headers\",{\"application_status\"})",
+                "    ",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_applicationType",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "applicationType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2771be5c-8d4d-4075-ba81-417ab8201601",
+            "sourceColumn": "applicationType",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6b0a9082-eb94-40fc-a886-9a1691bacc67",
+        "partitions": [
+          {
+            "name": "dim_applicationType",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\dim_applicatioType.csv\"),[Delimiter=\",\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(Source,{\"Column1\"}),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Removed Other Columns\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"applicationType\", type text}})",
+                "    ",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_interviewStatus",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "interviewStatusName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5acf6ef1-35e3-4f70-b644-86ef3c34528a",
+            "sourceColumn": "interviewStatusName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2b07348e-89cc-419c-b78b-6f6ece7f03bd",
+        "partitions": [
+          {
+            "name": "dim_interviewStatus",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\dim_interviewStatus.csv\"),[Delimiter=\";\", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}}),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"interviewStatusName\", type text}})",
+                "in",
+                "    #\"Changed Type1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_interviewType",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "interviewTypeName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9a9ebe04-c49b-46dd-9067-fd9060da5874",
+            "sourceColumn": "interviewTypeName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interviewTypeId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b8a86ee6-c544-48e3-ba17-c70df5791f55",
+            "sourceColumn": "interviewTypeId",
+            "summarizeBy": "count"
+          }
+        ],
+        "lineageTag": "77cfbe6b-2316-4eb4-bbf9-31c88bddd661",
+        "partitions": [
+          {
+            "name": "dim_interviewType",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\ItaFiles_PowerBI\\PowerBI_Projects\\job_application_tracker\\dim_interviewType.csv\"),[Delimiter=\";\", Columns=1, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}}),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Changed Type\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"interviewTypeName\", type text}}),",
+                "    #\"Added Index\" = Table.AddIndexColumn(#\"Changed Type1\", \"Index\", 1, 1, Int64.Type),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Added Index\",{{\"Index\", \"interviewTypeId\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
